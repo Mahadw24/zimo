@@ -28,6 +28,7 @@ export const CartProvider = ({ children }) => {
 
     const removeFromCart = (id) => {
         setCartItems(cartItems.filter(item => item.id !== id));
+        sessionStorage.removeItem('cart',cartItems.filter(item => item.id !== id));
     };
 
     const checkForDisabled = (id) => {
